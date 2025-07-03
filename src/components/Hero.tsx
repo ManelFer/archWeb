@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
+import backgroundImage from '../assets/car-5.jpeg';
+
 
 interface HeroProps {
   setActiveSection: (section: string) => void;
@@ -12,10 +14,14 @@ const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: '../assets/car-5.jpeg'
+          backgroundImage: `url(${backgroundImage})`
         }}
       >
-        <img src="./public/car-5.jpeg" alt="fundo" className='w-full' />
+        <img
+          src={backgroundImage}
+          alt="Background Image"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-warm-brown/80 via-warm-brown/60 to-warm-brown/40"></div>
       </div>
 

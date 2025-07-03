@@ -10,35 +10,35 @@ const ProjectCarousel: React.FC = () => {
       // title: 'Apartamento Moderno',
       // category: 'Residencial',
       // description: 'Design contemporâneo com toques minimalistas em apartamento de 120m²',
-      image: './public/car-1.png'
+      image: '/car-1.png'
     },
     {
       id: 2,
       // title: 'Casa de Campo',
       // category: 'Residencial',
       // description: 'Projeto rústico moderno que harmoniza com a natureza',
-      image: './public/car-2.png'
+      image: '/car-2.png'
     },
     {
       id: 3,
       // title: 'Escritório Corporativo',
       // category: 'Comercial',
       // description: 'Ambiente profissional que inspira criatividade e produtividade',
-      image: './public/car-3.png'
+      image: '/car-3.png'
     },
     {
       id: 4,
       // title: 'Loft Industrial',
       // category: 'Residencial',
       // description: 'Integração de elementos industriais com conforto residencial',
-      image: './public/car-4.png'
+      image: '/car-4.png'
     },
     {
       id: 5,
       // title: 'Café Boutique',
       // category: 'Comercial',
       // description: 'Ambiente acolhedor que convida à contemplação e relaxamento',
-      image: './public/car-5.jpeg'
+      image: '/car-5.jpeg'
     }
   ];
 

@@ -59,7 +59,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="bg-white rounded-2xl p-4 shadow-lg border border-warm-beige/20">
                 <img
-                  src="./public/perfil.png"
+                  src="/perfil.png"
                   alt="Luiza França"
                   className="w-full h-80 object-cover rounded-xl"
                 />
