@@ -5,9 +5,9 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: Home,
-      title: 'Projeto Arquitetônico Residencial',
-      description: 'Projetos completos para residências, criando ambientes únicos que refletem o estilo de vida dos moradores.',
-      features: ['Conceito e estilo', 'Mobiliário sob medida', 'Iluminação especializada', 'Decoração personalizada']
+      title: 'Projeto Arquitetônico - Residencial/Comercial',
+      description: 'Projetos completos para residências e pontos comerciais, criando ambientes únicos que refletem as necessidades do cliente.',
+      features: ['Conceito e estilo', 'Iluminação especializada', 'Projeto executivo', 'Projeto legal']
     },
     {
       icon: Palette,
