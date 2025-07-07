@@ -1,7 +1,27 @@
-import React from 'react';
+'use client';
+import React, { useRef, useState } from 'react';
 import { Instagram, Linkedin, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+     emailjs.sendForm('service_3wzyuyh', 'template_cmpdfi9', form.current, '2ytsO15eTFKp13sE_').then(() => {
+      setStatus("Mensagem enviada com sucesso!");
+      form.current?.reset();
+    }, (error) => {
+      setStatus("Ocorreu um erro ao enviar a mensagem.");
+      console.error(error.text);
+    });
+  };
+
+
   const socialLinks = [
     {
       icon: Instagram,
@@ -12,7 +32,7 @@ const Contact: React.FC = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/anna-luiza-frança-moura-913385344/',
+      href: 'linkedin.com/in/arquiteta-luiza-frança',
       color: 'hover:text-blue-600'
     },
     {
@@ -60,16 +80,17 @@ const Contact: React.FC = () => {
             <h3 className="text-2xl font-semibold text-warm-brown mb-6">
               Envie uma Mensagem
             </h3>
-            <form className="space-y-6">
+            <form className="space-y-6" ref={form} onSubmit={sendEmail}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-warm-beige font-medium mb-2">
                     Nome
                   </label>
                   <input
+                    name="name"
                     type="text"
                     className="w-full px-4 py-3 border border-warm-beige/30 rounded-lg focus:ring-2 focus:ring-soft-rose focus:border-transparent outline-none transition-all duration-300"
-                    placeholder="Seu nome"
+                    placeholder="Seu nome completo"
                   />
                 </div>
                 <div>
@@ -77,18 +98,20 @@ const Contact: React.FC = () => {
                     E-mail
                   </label>
                   <input
+                    name="email"
                     type="email"
                     className="w-full px-4 py-3 border border-warm-beige/30 rounded-lg focus:ring-2 focus:ring-soft-rose focus:border-transparent outline-none transition-all duration-300"
                     placeholder="seu@email.com"
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-warm-beige font-medium mb-2">
                   Telefone
                 </label>
                 <input
+                  name="phone"
                   type="tel"
                   className="w-full px-4 py-3 border border-warm-beige/30 rounded-lg focus:ring-2 focus:ring-soft-rose focus:border-transparent outline-none transition-all duration-300"
                   placeholder="(11) 99999-9999"
@@ -100,6 +123,7 @@ const Contact: React.FC = () => {
                   Mensagem
                 </label>
                 <textarea
+                  name="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-warm-beige/30 rounded-lg focus:ring-2 focus:ring-soft-rose focus:border-transparent outline-none transition-all duration-300 resize-none"
                   placeholder="Conte-me sobre seu projeto..."
@@ -112,6 +136,7 @@ const Contact: React.FC = () => {
               >
                 Enviar Mensagem
               </button>
+              {status && <p className="text-green-500 mt-4">{status}</p>}
             </form>
           </div>
 

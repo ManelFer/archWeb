@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
           
           <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 mb-12 shadow-lg border border-warm-beige/20">
             <blockquote className="text-2xl md:text-3xl font-medium text-warm-brown italic leading-relaxed">
-              "Seu espaço com identidade, aconchego e funcionalidade"
+              Seu espaço com identidade, aconchego e funcionalidade
             </blockquote>
           </div>
 

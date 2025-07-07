@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Nosso Compromisso</h4>
             <blockquote className="text-white/70 italic leading-relaxed">
-              "Seu espaço com identidade, aconchego e funcionalidade"
+              Seu espaço com identidade, aconchego e funcionalidade
             </blockquote>
             <div className="mt-4 p-4 bg-white/10 rounded-lg">
               <p className="text-sm text-white/80">
